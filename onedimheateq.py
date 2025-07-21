@@ -1,5 +1,4 @@
-from pandas import DataFrame
-from numpy import array, ones
+from numpy import ones
 
 x = 1
 t = 10
@@ -11,28 +10,20 @@ c = 1.9e-5
 
 k = dt*c**2/dx**2
 
-df = DataFrame()
+nx = int(x/dx)
+nt = int(t/dt)
 
-t0 = 373.15
-tSurr = 273.15
+heat_array = 273.15*ones((nx, nt))
 
-df['u0'] = tSurr*ones((1, int(x/dx)))[0]
-df['u0'][0] = t0
+heat_array[0] = 373.15*ones((1, nt))[0]
+heat_array[-1] = 373.15*ones((1, nt))[0]
 
-for i in range(1, int(t/dt)):
+for i in range(nx - 1):
+    for j in range(nt - 1):
 
-    reqd_arr = df[f'u{i - 1}']
-
-    current_arr = []
-    current_arr.append(t0)
+        heat_array[i][j + 1] = k*heat_array[i - 1][j] + (1 - 2*k)*heat_array[i][j] + k*heat_array[i + 1][j]
     
-    for j in range(1, int(x/dx) - 1):
+    heat_array[0] = 373.15*ones((1, nt))[0]
+    heat_array[-1] = 373.15*ones((1, nt))[0]
 
-        cur_val = k*reqd_arr[j - 1] + (1 - 2*k)*reqd_arr[j] + k*reqd_arr[j + 1]
-        current_arr.append(cur_val)
-
-    current_arr.append(t0)
-
-    df[f'u{i}'] = current_arr
-
-df.to_csv('onedimheateqdata.csv')
+    
