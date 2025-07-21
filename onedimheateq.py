@@ -2,8 +2,8 @@ from numpy import ones
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-x = 1
-t = 200
+x = 0.01
+t = 10
 
 dx = 0.01
 dt = 0.01
