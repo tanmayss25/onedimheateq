@@ -28,7 +28,8 @@ where $\alpha = \frac{c^2 \Delta t}{\Delta x^2} $
 
 The following boundary conditions were applied to the system:
 
-$$ T_0 = T_l = 373.15K $$
+$$ T_0 =  373.15K $$
+$$ T_l = 273.15K $$
 
 The temperature everywhere else is $273.15 K$.
 
