@@ -20,7 +20,17 @@ $$\frac{\partial^2 u}{\partial x^2} = \frac{u_{i - 1, j} - 2u_{i, j} + u_{i + 1,
 
 where $i$ is along $x$ and $j$ is along time. Therefore,
 
-$$u_{i, j + 1} = \frac{c^2 \Delta t}{(\Delta x)^2} [u_{i - 1, j} - 2u_{i, j} + u_{i + 1, j}] $$
+$$u_{i, j + 1} = \alpha u_{i - 1, j} - (1 - 2 \alpha) u_{i, j} + \alpha u_{i + 1, j} $$
+
+where $\alpha = \frac{c^2 \Delta t}{\Delta x^2} $
+
+### Boundary Conditions
+
+The following boundary conditions were applied to the system:
+
+$$ T_0 = T_l = 373.15K $$
+
+The temperature everywhere else is $273.15 K$.
 
 ## References
 
