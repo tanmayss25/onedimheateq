@@ -36,7 +36,7 @@ custom_cmap = plt.cm.colors.LinearSegmentedColormap.from_list("BGYR", colors)
 
 plt.figure(figsize = (6,6))
 sns.heatmap(heat_array, cmap = custom_cmap, cbar = True, cbar_kws = {'label':'Temperature (K)'})
-plt.title('Temperature Distribution vs Time')
+plt.title('Temperature Distribution along Time (t) Steps and Spatial Coordinate (x) Steps')
 plt.xlabel('Time')
 plt.ylabel('x')
 plt.show()
