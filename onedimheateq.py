@@ -2,13 +2,13 @@ from numpy import ones
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-x = 0.01
+x = 1
 t = 10
 
 dx = 0.01
 dt = 0.01
 
-c = 0.0025
+c = 2e-5
 
 k = dt*c**2/dx**2
 
